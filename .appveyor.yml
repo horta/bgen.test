@@ -7,6 +7,12 @@ notifications:
     on_build_status_changed: false
 
 build_script:
+  - powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/horta/zstd.install/master/install.bat', 'install.bat')" && install.bat
+  - set PATH=%programfiles%\zstd\bin;%PATH%
+  - powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/horta/zlib.install/master/install.bat', 'install.bat')" && install.bat
+  - set PATH=%programfiles%\zlib\bin;%PATH%
+  - powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/horta/almosthere/master/install.bat', 'install.bat')" && install.bat
+  - set PATH=%programfiles%\athr\bin;%PATH%
   - powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/limix/bgen/master/install.bat', 'install.bat')" && install.bat
 
 test_script:

@@ -3,6 +3,9 @@ os:
   - osx
 language: c
 sudo: required
+install:
+  - bash <(curl -fsSL https://raw.githubusercontent.com/horta/zstd.install/master/install)
+  - bash <(curl -fsSL https://raw.githubusercontent.com/horta/almosthere/master/install)
 script:
   - bash <(curl -fsSL https://raw.githubusercontent.com/limix/bgen/master/install)
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
